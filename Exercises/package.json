@@ -8,14 +8,21 @@
     "multiply": "ts-node multiplier.ts",
     "calculate": "ts-node calculator.ts",
     "bmiCalculator": "ts-node bmiCalculator.ts",
-    "exerciseCalculator": "ts-node exerciseCalculator.ts"
+    "exerciseCalculator": "ts-node exerciseCalculator.ts",
+    "start": "ts-node index.ts",
+    "dev": "ts-node-dev index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
   }
 }
