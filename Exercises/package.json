@@ -10,7 +10,8 @@
     "bmiCalculator": "ts-node bmiCalculator.ts",
     "exerciseCalculator": "ts-node exerciseCalculator.ts",
     "start": "ts-node index.ts",
-    "dev": "ts-node-dev index.ts"
+    "dev": "ts-node-dev index.ts",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,9 @@
   "description": "",
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"

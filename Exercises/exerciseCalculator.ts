@@ -3,7 +3,7 @@ interface ExerciseValues {
   dailyExerciseHours: number[];
 }
 
-const parseExerciseArguments = (args: string[]): ExerciseValues => {
+const parseExerciseArguments = (args: string[]): ExerciseValues  => {
   if (args.length < 4) throw new Error("Not enough arguments");
 
   const target = Number(args[2]);
@@ -26,10 +26,25 @@ interface ExerciseResult {
   average: number;
 }
 
-function calculateExercises(
+export function calculateExercises(
   dailyExerciseHours: number[],
   target: number
 ): ExerciseResult {
+
+  if (!dailyExerciseHours || target === undefined) {
+    throw new Error("parameters missing");
+  }
+
+  if (isNaN(target) || dailyExerciseHours.some(isNaN)) {
+    throw new Error("malformatted parameters");
+  }
+
+  if (dailyExerciseHours.length !== 7) {
+    throw new Error(
+      "malformatted parameters, expected 7 values in daily_exercises array"
+    );
+  }
+
   const periodLength = dailyExerciseHours.length;
   const trainingDays = dailyExerciseHours.filter((hours) => hours > 0).length;
   const totalHours = dailyExerciseHours.reduce((sum, hours) => sum + hours, 0);
