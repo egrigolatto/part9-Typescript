@@ -1,8 +1,5 @@
-export interface CoursePart {
-  name: string;
-  exerciseCount: number;
-}
-
+import { CoursePart } from "../App";
+import { Part } from "./Part";
 export interface IContentProps {
   parts: CoursePart[];
 }
@@ -10,10 +7,8 @@ export interface IContentProps {
 export function Content({ parts }: IContentProps) {
   return (
     <div>
-      {parts.map((part, index) => (
-        <p key={index}>
-          {part.name}: {part.exerciseCount}
-        </p>
+      {parts.map((part) => (
+        <Part key={part.name} part={part} />
       ))}
     </div>
   );
