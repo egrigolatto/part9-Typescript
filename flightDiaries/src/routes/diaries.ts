@@ -7,8 +7,12 @@ import toNewDiaryEntry from "../utils";
 const router = express.Router();
 
 router.get("/", (_req, res) => {
-  res.send(diaryService.getNonSensitiveEntries());
+  res.send(diaryService.getEntries());
 });
+
+// router.get("/", (_req, res) => {
+//   res.send(diaryService.getNonSensitiveEntries());
+// });
 
 router.get("/:id", (req, res) => {
   const diary = diaryService.findById(Number(req.params.id));
